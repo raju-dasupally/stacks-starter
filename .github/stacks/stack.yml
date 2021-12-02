@@ -13,32 +13,32 @@ branding:
 # All inputs will be considered as non-secrets unless specified as **is_secret:true**
 # All inputs will be available for scripts/workflows run as part of stack init
 # Any input that is not explicitly configured as Repo/Environment secret will NOT be available in the new stack
-# inputs:
-  # - name: sample_integer_input
-  #   type: integer # other accepted - string/boolean
-  #   default: 2
-  #   description: This shows up in the form during consumption.
-  #   validvalues: 
-  #   - 2
-  #   - 3
-  #   - 4
-  #   - 5
-  #   - 6
+  inputs:
+    - name: sample_integer_input
+      type: integer # other accepted - string/boolean
+      default: 2
+      description: This shows up in the form during consumption.
+      validvalues: 
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
 
-  # - name: secret
-  #   is-secret: true / false
+    - name: secret
+      is-secret: true / false
 
 #-------------------------------------------------------------
-# configs:
-  # Meta data for creating the new repository
-  # repo-metadata:
-  #   parameters:
-  #     secrets: 
-  #     - name: sample_secret
-  #       value: ${{inputs.secret}} # example of a reference
-  #     topics:
-  #     - sample_topic_1
-  #     - sample_topic_2
+  configs:
+    Meta data for creating the new repository
+    repo-metadata:
+      parameters:
+        secrets: 
+        - name: sample_secret
+          value: ${{inputs.secret}} # example of a reference
+        topics:
+        - sample_topic_1
+        - sample_topic_2
       
   # Branch Protection rules
   # branches:
